@@ -2,7 +2,7 @@
 <%- include('../partials/nav') %>
 <main>
   <h1>Add a Game</h1>
-  <form id="new-form" action="">
+  <form id="new-form" action="/games" method="POST">
     <label for="game-title">Game Title:</label>
     <input type="text" name="gameTitle">
     <label for="release-date">Release Date:</label>
@@ -12,7 +12,9 @@
       <option value="Xbox">Xbox</option>
       <option value="PS3">PS3</option>
       <option value="Switch">Switch</option>
+      <option value="PC">PC</option>
     </select>
+    <button type="submit">Add Game</button>
   </form>
 </main>
 <%- include('../partials/footer') %>

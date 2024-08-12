@@ -12,7 +12,7 @@ const gameSchema = new Schema({
   },
   console: {
     type: String,
-    enum: ["Xbox, PS3, Switch"]
+    enum: ["Xbox", "PS3", "Switch", "PC"]
   }
 })
 
