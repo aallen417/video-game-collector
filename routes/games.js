@@ -8,6 +8,9 @@ const router = Router()
 // GET /games
 router.get("/", gamesCtrl.index)
 
+// GET /games/:gameId
+router.get("/:gameId", gamesCtrl.show)
+
 ////Protected Routes
 // GET /games/new
 router.get("/new", isSignedIn, gamesCtrl.new)

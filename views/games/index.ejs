@@ -4,9 +4,7 @@
   <h1>All Games</h1>
   <section>
     <% games.forEach((game) => { %>
-      <div><%= game.gameTitle %></div>
-      <div><%= game.releaseDate %></div>
-      <div><%= game.console %></div>
+      <a href="/games/<%= game._id %>"><div><%= game.gameTitle %></div></a>
       <% }) %>
   </section>
 </main>

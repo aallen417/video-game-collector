@@ -21,8 +21,16 @@ async function create(req, res) {
   }
 }
 
+async function show(req, res) {
+  const game = await Game.findById(req.params.gameId)
+  res.render("games/show", {
+    game
+  })
+}
+
 export {
   index,
   newGame as new,
   create,
+  show,
 }
