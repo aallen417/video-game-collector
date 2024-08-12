@@ -1,0 +1,18 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+<main>
+  <h1>Add a Game</h1>
+  <form id="new-form" action="">
+    <label for="game-title">Game Title:</label>
+    <input type="text" name="gameTitle">
+    <label for="release-date">Release Date:</label>
+    <input type="text" name="releaseDate">
+    <label for="console">Console:</label>
+    <select name="console" id="console">
+      <option value="Xbox">Xbox</option>
+      <option value="PS3">PS3</option>
+      <option value="Switch">Switch</option>
+    </select>
+  </form>
+</main>
+<%- include('../partials/footer') %>

@@ -6,6 +6,11 @@ async function index(req, res) {
   games
 }
 
+function newGame(req, res) {
+  res.render("games/new")
+}
+
 export {
-  index
+  index,
+  newGame as new
 }
