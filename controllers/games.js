@@ -13,8 +13,20 @@ function newGame(req, res) {
 
 async function create(req, res) {
   try {
-    const game = await Game.create(req.body)
-    res.redirect("/games")
+    const gameTitleInDatabase = await Game.findOne({ gameTitle: req.body.gameTitle })
+    const releaseDateInDatabase = await Game.findOne({ releaseDate: req.body.releaseDate })
+    const consoleInDatabase = await Game.findOne({ console: req.body.console })
+    if (gameTitleInDatabase && releaseDateInDatabase && consoleInDatabase) {
+      return res.send("Game already exist, please enter a different game.")
+    }
+    else if (gameTitleInDatabase && !releaseDateInDatabase && !consoleInDatabase) {
+      const game = await Game.create(req.body)
+      return res.redirect("/games")
+    }
+    else if (gameTitleInDatabase && releaseDateInDatabase && !consoleInDatabase) {
+      const game = await Game.create(req.body)
+      return res.redirect("/games")
+    }
   } catch (error) {
     console.log(error)
     res.redirect("/games/new")

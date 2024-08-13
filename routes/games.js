@@ -4,18 +4,17 @@ import * as gamesCtrl from "../controllers/games.js"
 
 const router = Router()
 
-//// Public Routes
+
 // GET /games
 router.get("/", gamesCtrl.index)
+
+// GET /games/new (protected route)
+router.get("/new", isSignedIn, gamesCtrl.new)
 
 // GET /games/:gameId
 router.get("/:gameId", gamesCtrl.show)
 
-////Protected Routes
-// GET /games/new
-router.get("/new", isSignedIn, gamesCtrl.new)
-
-// POST /games
+// POST /games (protected route)
 router.post("/", isSignedIn, gamesCtrl.create)
 
 export { router }
