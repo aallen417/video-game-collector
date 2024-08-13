@@ -12,6 +12,7 @@ const userSchema = new Schema({
     required: true,
     select: false
   },
+  myGames: [{type: Schema.Types.ObjectId, ref: "Game"}]
 }, {
   timestamps: true
 })

@@ -10,4 +10,10 @@ router.get('/:userId', usersCtrl.show)
 // protected routes
 router.get('/', isSignedIn, usersCtrl.index)
 
+// GET /users/:userId/myCollection
+router.get("/:userId/myCollection", isSignedIn, usersCtrl.myCollectionIndex)
+
+// POST /users/:userId/myCollection
+router.post("/:userId/myCollection", isSignedIn, usersCtrl.addToCollection)
+
 export { router }

@@ -1,0 +1,13 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+<main>
+  <h1>My Collection</h1>
+  <section>
+    <% user.myGames.forEach((game) => { %>
+      <div><%= game.gameTitle %></div>
+      <div><%= game.releaseDate %></div>
+      <div><%= game.console %></div>
+      <% }) %>
+  </section>
+</main>
+<%- include('../partials/footer') %>

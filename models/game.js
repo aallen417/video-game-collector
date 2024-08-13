@@ -14,6 +14,7 @@ const gameSchema = new Schema({
     type: String,
     enum: ["Xbox", "PS3", "Switch", "PC"]
   }
+  
 })
 
 const Game = mongoose.model("Game", gameSchema)
