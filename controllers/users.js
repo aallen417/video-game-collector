@@ -35,6 +35,18 @@ async function myCollectionIndex(req, res) {
   })
 }
 
+async function deleteFromCollection(req, res) {
+  try {
+    const user = await User.findById(req.params.userId)
+    user.myGames.remove({_id: req.params.gameId})
+    await user.save()
+    res.redirect(`/users/${user._id}/myCollection`)
+  } catch (error) {
+    const user = await User.findById(req.params.userId)
+    console.log(error)
+    res.redirect(`/users/${user._id}`)
+  }
+}
 async function addToCollection(req, res){
   try {
     const user = await User.findById(req.params.userId)
@@ -51,5 +63,6 @@ export {
   index,
   show,
   myCollectionIndex,
-  addToCollection
+  addToCollection,
+  deleteFromCollection as delete
 }

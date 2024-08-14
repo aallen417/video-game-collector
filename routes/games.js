@@ -15,6 +15,6 @@ router.get("/new", isSignedIn, gamesCtrl.new)
 router.get("/:gameId", gamesCtrl.show)
 
 // POST /games (protected route)
-router.post("/", isSignedIn, gamesCtrl.create)
+router.post("/", gamesCtrl.create)
 
 export { router }
