@@ -13,8 +13,7 @@ const userSchema = new Schema({
     select: false
   },
   myGames: [{type: Schema.Types.ObjectId, ref: "Game"}],
-  // owner: {type: Schema.Types.ObjectId, ref: "User"}
-}, {
+  }, {
   timestamps: true
 })
 

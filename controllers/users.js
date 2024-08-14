@@ -28,16 +28,6 @@ async function show(req, res) {
   }
 }
 
-async function myCollectionIndex(req, res) {
-  const selectedUser = await User.findById(req.params.userId)
-  .populate("myGames")
-  const myGames = await Game.find({_id: {$nin: selectedUser.myGames}})
-  res.render("mycollection/index", {
-    selectedUser,
-    myGames
-  })
-}
-
 async function deleteFromCollection(req, res) {
   try {
     const user = await User.findById(req.params.userId)
@@ -45,9 +35,7 @@ async function deleteFromCollection(req, res) {
     await user.save()
     res.redirect(`/users/${user._id}`)
   } catch (error) {
-    const user = await User.findById(req.params.userId)
     console.log(error)
-    res.redirect(`/users/`)
   }
 }
 async function addToCollection(req, res){
@@ -65,7 +53,6 @@ async function addToCollection(req, res){
 export {
   index,
   show,
-  myCollectionIndex,
   addToCollection,
   deleteFromCollection as delete
 }

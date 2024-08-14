@@ -7,7 +7,7 @@
   <div><%= game.releaseDate %></div>
   <div>Console:</div>
   <div><%= game.console %></div>
-  <form action="/users/<%= user._id %>/myCollection" method="POST">
+  <form action="/users/<%= user._id %>" method="POST">
 
     <button type="submit" name="gameId" value="<%= game._id %>">Add to Collection</button>
   </form>
