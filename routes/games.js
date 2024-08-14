@@ -12,7 +12,7 @@ router.get("/", gamesCtrl.index)
 router.get("/new", isSignedIn, gamesCtrl.new)
 
 // GET /games/:gameId
-router.get("/:gameId", gamesCtrl.show)
+router.get("/:gameId", isSignedIn, gamesCtrl.show)
 
 // POST /games (protected route)
 router.post("/", gamesCtrl.create)

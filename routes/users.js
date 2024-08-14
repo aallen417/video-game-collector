@@ -10,13 +10,10 @@ router.get('/:userId', usersCtrl.show)
 // protected routes
 router.get('/', isSignedIn, usersCtrl.index)
 
-// GET /:userId/myCollection
-router.get("/:userId/myCollection", isSignedIn, usersCtrl.myCollectionIndex)
+// POST /:userId/
+router.post("/:userId/", isSignedIn, usersCtrl.addToCollection)
 
-// POST /:userId/myCollection
-router.post("/:userId/myCollection", isSignedIn, usersCtrl.addToCollection)
-
-// DELETE /:userId/myCollection/:gameId
-router.delete("/:userId/myCollection/:gameId", isSignedIn, usersCtrl.delete)
+// DELETE /:userId/:gameId
+router.delete("/:userId/:gameId", isSignedIn, usersCtrl.delete)
 
 export { router }

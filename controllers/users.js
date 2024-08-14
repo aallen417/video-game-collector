@@ -16,8 +16,11 @@ async function index(req, res) {
 async function show(req, res) {
   try {
     const selectedUser = await User.findById(req.params.userId)
+  .populate("myGames")
+  const myGames = await Game.find({_id: {$nin: selectedUser.myGames}})
     res.render('users/show', {
-      selectedUser
+      selectedUser,
+      myGames
     })
   } catch (error) {
     console.log(error)
@@ -26,11 +29,11 @@ async function show(req, res) {
 }
 
 async function myCollectionIndex(req, res) {
-  const user = await User.findById(req.params.userId)
+  const selectedUser = await User.findById(req.params.userId)
   .populate("myGames")
-  const myGames = await Game.find({_id: {$nin: user.myGames}})
+  const myGames = await Game.find({_id: {$nin: selectedUser.myGames}})
   res.render("mycollection/index", {
-    user,
+    selectedUser,
     myGames
   })
 }
@@ -40,11 +43,11 @@ async function deleteFromCollection(req, res) {
     const user = await User.findById(req.params.userId)
     user.myGames.remove({_id: req.params.gameId})
     await user.save()
-    res.redirect(`/users/${user._id}/myCollection`)
+    res.redirect(`/users/${user._id}`)
   } catch (error) {
     const user = await User.findById(req.params.userId)
     console.log(error)
-    res.redirect(`/users/${user._id}`)
+    res.redirect(`/users/`)
   }
 }
 async function addToCollection(req, res){
@@ -52,7 +55,7 @@ async function addToCollection(req, res){
     const user = await User.findById(req.params.userId)
     user.myGames.push(req.body.gameId)
     await user.save()
-    res.redirect(`/users/${user._id}/myCollection`)
+    res.redirect(`/users/${user._id}`)
   } catch (error) {
     console.log(error)
     res.redirect("/")  

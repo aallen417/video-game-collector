@@ -12,7 +12,8 @@ const userSchema = new Schema({
     required: true,
     select: false
   },
-  myGames: [{type: Schema.Types.ObjectId, ref: "Game"}]
+  myGames: [{type: Schema.Types.ObjectId, ref: "Game"}],
+  // owner: {type: Schema.Types.ObjectId, ref: "User"}
 }, {
   timestamps: true
 })
