@@ -11,10 +11,13 @@ router.get("/", gamesCtrl.index)
 // GET /games/new (protected route)
 router.get("/new", isSignedIn, gamesCtrl.new)
 
-// GET /games/:gameId
+// GET /games/:gameId (protected route)
 router.get("/:gameId", isSignedIn, gamesCtrl.show)
 
 // POST /games (protected route)
-router.post("/", gamesCtrl.create)
+router.post("/", isSignedIn, gamesCtrl.create)
+
+//POST /games/:gameId/reviews
+router.post("/:gameId/reviews", isSignedIn, gamesCtrl.createReview)
 
 export { router }

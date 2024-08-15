@@ -36,6 +36,7 @@ async function deleteFromCollection(req, res) {
     res.redirect(`/users/${user._id}`)
   } catch (error) {
     console.log(error)
+    res.redirect("/users")
   }
 }
 async function addToCollection(req, res){

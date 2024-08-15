@@ -29,9 +29,23 @@ async function create(req, res) {
 }
 async function show(req, res) {
   const game = await Game.findById(req.params.gameId)
+  .populate(["reviews.author"])
   res.render("games/show", {
     game
   })
+}
+
+async function createReview(req, res) {
+try {
+  const game = await Game.findById(req.params.gameId)
+  req.body.author = req.session.user._id
+  game.reviews.push(req.body)
+  await game.save()
+  res.redirect(`/games/${game._id}`)
+} catch (error) {
+  console.log(error)
+  res.redirect("/games")
+}
 }
 
 export {
@@ -39,4 +53,5 @@ export {
   newGame as new,
   create,
   show,
+  createReview
 }

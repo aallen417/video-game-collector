@@ -11,7 +11,7 @@
   </section>
   <section>
     <h1>Leave a Review</h1>
-    <form action="">
+    <form action="/games/<%= game._id %>/reviews" method="POST">
       <textarea name="content"></textarea><br>
       <label for="rating">Rating:</label>
       <select name="rating">
@@ -23,6 +23,14 @@
       </select><br>
       <button type="submit">Add Review</button>
     </form>
+  </section>
+  <section>
+    <h1>Reviews</h1>
+    <% game.reviews.forEach(review => { %>
+     <div>
+      <%= review.author.username %> - <%= review.content %> - <%= review.rating %>
+     </div>
+    <% }) %>
   </section>
 </main>
 <%- include('../partials/footer') %>
