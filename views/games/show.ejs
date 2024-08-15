@@ -29,6 +29,11 @@
     <% game.reviews.forEach(review => { %>
      <div>
       <%= review.author.username %> - <%= review.content %> - <%= review.rating %>
+      <% if (review.author._id.equals(user?._id)) { %>     
+        <form method="POST" action="/games/<%= game._id %>/<%= review._id %>?_method=DELETE">
+          <button type="submit">X</button>
+        </form>
+        <% } %>
      </div>
     <% }) %>
   </section>

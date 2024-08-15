@@ -48,10 +48,23 @@ try {
 }
 }
 
+async function deleteReview(req, res) {
+  try {
+    const game = await Game.findById(req.params.gameId)
+    game.reviews.remove({_id: req.params.reviewId})
+    await game.save()
+    res.redirect(`/games/${game._id}`)
+  } catch (error) {
+    console.log(error)
+    res.redirect("/games")
+  }
+}
+
 export {
   index,
   newGame as new,
   create,
   show,
-  createReview
+  createReview,
+  deleteReview
 }
