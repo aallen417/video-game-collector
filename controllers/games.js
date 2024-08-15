@@ -60,11 +60,42 @@ async function deleteReview(req, res) {
   }
 }
 
+async function editReview(req, res) {
+  try {
+    const game = await Game.findById(req.params.gameId)
+    const review = game.reviews.id(req.params.reviewId)    
+    res.render("reviews/edit", {
+      review,
+      game
+    })
+  } catch (error) {
+    console.log(error)
+    res.redirect("/games")
+  }
+}
+
+async function updateReview(req, res) {
+try {
+  const game = await Game.findById(req.params.gameId)
+  const review = game.reviews.id(req.params.reviewId)
+  if (review.author.equals(req.session.user._id)) {
+    review.set(req.body)
+    await game.save()
+    res.redirect(`/games/${game._id}`)
+  }
+} catch (error) {
+  console.log(error)
+  res.redirect("/games")
+}
+}
+
 export {
   index,
   newGame as new,
   create,
   show,
   createReview,
-  deleteReview
+  deleteReview,
+  editReview,
+  updateReview
 }

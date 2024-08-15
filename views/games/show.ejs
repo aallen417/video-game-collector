@@ -30,6 +30,9 @@
      <div>
       <%= review.author.username %> - <%= review.content %> - <%= review.rating %>
       <% if (review.author._id.equals(user?._id)) { %>     
+        <a href="/games/<%= game._id %>/<%= review._id %>/edit">
+          <button>Edit Review</button>
+        </a>
         <form method="POST" action="/games/<%= game._id %>/<%= review._id %>?_method=DELETE">
           <button type="submit">X</button>
         </form>
