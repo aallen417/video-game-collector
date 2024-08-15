@@ -1,15 +1,28 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 <main>
-  <div>Game Title:</div>
-  <div><%= game.gameTitle %></div>
-  <div>Release Date:</div>
-  <div><%= game.releaseDate %></div>
-  <div>Console:</div>
-  <div><%= game.console %></div>
-  <form action="/users/<%= user._id %>" method="POST">
-
-    <button type="submit" name="gameId" value="<%= game._id %>">Add to Collection</button>
-  </form>
+  <section>    
+    <h1><%= game.gameTitle %></h1>
+    <h2><%= game.releaseDate %></h2>
+    <h2><%= game.console %></h2>
+    <form action="/users/<%= user._id %>" method="POST">
+      <button type="submit" name="gameId" value="<%= game._id %>">Add to  Collection</button>
+    </form>
+  </section>
+  <section>
+    <h1>Leave a Review</h1>
+    <form action="">
+      <textarea name="content"></textarea><br>
+      <label for="rating">Rating:</label>
+      <select name="rating">
+        <option value="1/5">1/5</option>
+        <option value="2/5">2/5</option>
+        <option value="3/5">3/5</option>
+        <option value="4/5">4/5</option>
+        <option value="5/5">5/5</option>
+      </select><br>
+      <button type="submit">Add Review</button>
+    </form>
+  </section>
 </main>
 <%- include('../partials/footer') %>
