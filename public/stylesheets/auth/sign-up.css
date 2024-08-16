@@ -6,20 +6,21 @@ form {
 }
 
 h1 {
-  font-size: 38;
-  margin-top: 30px;
-  margin-bottom: 70px;
+  font-size: 40px;
+  margin-top: 90px;
+  margin-bottom: 100px;
 }
 
 label {
-  margin-bottom: 12px;
-  font-size: 20px;
+  margin-bottom: 20px;
+  font-size: 22px;
   font-weight: 600;
 }
 
 input {
-  margin-bottom: 45px;
-  border-radius: 4px;
+  height: 28px;
+  margin-bottom: 55px;
+  border-radius: 8px;
   border-width: 2px;
 }
 
@@ -30,4 +31,9 @@ button {
   height: 40px;
   width: 120px;
   border-radius: 12px;
+}
+
+button:hover {
+  color: white;
+  background-color: black;
 }

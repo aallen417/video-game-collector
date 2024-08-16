@@ -20,7 +20,7 @@ label {
 input {
   height: 28px;
   margin-bottom: 45px;
-  border-radius: 4px;
+  border-radius: 8px;
   border-width: 2px;
 }
 
@@ -31,4 +31,9 @@ button {
   height: 40px;
   width: 120px;
   border-radius: 12px;
+}
+
+button:hover {
+  color: white;
+  background-color: black;
 }
