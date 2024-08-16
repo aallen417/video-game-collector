@@ -18,6 +18,7 @@ label {
 }
 
 input {
+  text-align: center;
   height: 28px;
   margin-bottom: 45px;
   border-radius: 8px;
