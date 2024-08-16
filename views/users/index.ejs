@@ -1,9 +1,14 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/users/index.css">
 <%- include('../partials/nav') %>
-
-<h1>User Index</h1>
-<% users.forEach(u => { %>
-  <h4><a href="/users/<%= u._id %>"><%= u.username %></a></h4>
-<% }) %>
-
+<main>
+  <h1>Users Collections</h1>
+  <section>
+    <% users.forEach(u => { %>
+     <div>
+      <a href="/users/<%= u._id %>"><%= u.username %></a>
+    </div>
+    <% }) %>
+  </section>
+</main>
 <%- include('../partials/footer') %>
