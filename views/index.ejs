@@ -1,19 +1,28 @@
 <%- include('./partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/landing/index.css">
 </head>
 <body>
-<nav>
-  <% if (user) { %>
-    <h1>Welcome, <%= user.username %>!</h1>
-    <a href="/auth/sign-out">Sign out</a>
-    <a href="/users">Users</a>
-    <a href="/users/<%= user._id %>">My Collection</a>
-    <a href="/games/new">Add Games</a>
-    <a href="/games">Games</a>
-    <% } else { %>
-      <h1>Please sign in!</h1>
-      <a href="/auth/sign-up">Sign up</a>
-      <a href="/auth/sign-in">Sign in</a>      
+  <nav>
+    <% if (user) { %>
+      <a href="/auth/sign-out">Sign out</a>
+      <a href="/users">Users</a>
+      <a href="/users/<%= user._id %>">My Collection</a>
+      <a href="/games/new">Add Games</a>
       <a href="/games">Games</a>
-  <% } %>
-</nav>
+      <% } else { %>
+        <a href="/auth/sign-up">Sign up</a>
+        <a href="/auth/sign-in">Sign in</a>      
+        <a href="/games">Games</a>
+        <% } %>
+      </nav>
+  <section>
+    <% if (user) { %>
+      <h1>Welcome, <%= user.username %>!</h1>
+    <% } else { %>
+      <h1>Welcome, Guest</h1>
+      <h2>Please sign up!</h2>
+      <h2>To start tracking your</h2>
+      <h2>Video Game Collection!</h2>
+    <% } %>
+    </section>
 <%- include('./partials/footer') %>
