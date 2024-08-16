@@ -1,16 +1,21 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/users/show.css">
 <%- include('../partials/nav') %>
-<h1><%= selectedUser.username %>'s Collection</h1>
-<section>
-  <% selectedUser.myGames.forEach((game) => { %>
-    <div><%= game.gameTitle %></div>
-    <div><%= game.releaseDate %></div>
-    <div><%= game.console %></div>
-    <% if (selectedUser._id.equals(user?._id)) { %>     
-      <form method="POST" action="/users/<%= user._id %>/<%= game._id %>?_method=DELETE">
-        <button type="submit">X</button>
-      </form>
+<main>
+  <h1><%= selectedUser.username %>'s Collection</h1>
+  <section>
+    <% selectedUser.myGames.forEach((game) => { %>
+      <a href="/games/<%= game._id %>">
+        <div class="title"><%= game.gameTitle %></div>
+      </a>
+      <div class="details"><%= game.releaseDate %></div>
+      <div class="details"><%= game.console %></div>
+      <% if (selectedUser._id.equals(user?._id)) { %>     
+        <form method="POST" action="/users/<%= user._id %>/<%= game._id %>?_method=DELETE">
+        <button type="submit">Remove</button>
+        </form>
       <% } %>
     <% }) %>
-</section>
+  </section>
+</main>
 <%- include('../partials/footer') %>

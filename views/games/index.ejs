@@ -5,7 +5,9 @@
   <h1>Games</h1>
   <section>
     <% games.forEach((game) => { %>
-      <a href="/games/<%= game._id %>"><div><%= game.gameTitle %></div></a>
+      <a href="/games/<%= game._id %>">
+        <div><%= game.gameTitle %></div>
+      </a>
       <% }) %>
   </section>
 </main>
