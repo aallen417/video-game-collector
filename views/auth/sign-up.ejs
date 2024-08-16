@@ -1,13 +1,27 @@
 <%- include('../partials/html-head') %>
-<%- include('../partials/nav') %>
+<link rel="stylesheet" href="/stylesheets/auth/sign-up.css">
+</head>
+<body>
+<nav>
+  <% if (user) { %>
+    <a href="/auth/sign-out">Sign out</a>
+    <a href="/users">Users</a>
+    <a href="/users/<%= user._id %>">My Collection</a>
+    <a href="/games/new">Add Games</a>
+    <a href="/games">Games</a>
+    <% } else { %>
+      <a href="/auth/sign-up">Sign up</a>
+      <a href="/auth/sign-in">Sign in</a>      
+  <% } %>
+</nav>
 
 <form class="auth" action="/auth/sign-up" method="POST">
   <h1>Create a new account!</h1>
-  <label for="username">Username:</label>
+  <label for="username">Username</label>
   <input type="text" name="username" id="username" />
-  <label for="password">Password:</label>
+  <label for="password">Password</label>
   <input type="password" name="password" id="password" />
-  <label for="confirmPassword">Confirm Password:</label>
+  <label for="confirmPassword">Confirm Password</label>
   <input type="password" name="confirmPassword" id="confirmPassword" />
   <button type="submit">Sign up</button>
 </form>

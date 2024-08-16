@@ -1,5 +1,19 @@
 <%- include('../partials/html-head') %>
-<%- include('../partials/nav') %>
+</head>
+<body>
+<nav>
+  <% if (user) { %>
+    <a href="/auth/sign-out">Sign out</a>
+    <a href="/users">Users</a>
+    <a href="/users/<%= user._id %>">My Collection</a>
+    <a href="/games/new">Add Games</a>
+    <a href="/games">Games</a>
+    <% } else { %>
+      <h1>Please sign in!</h1>
+      <a href="/auth/sign-up">Sign up</a>
+      <a href="/auth/sign-in">Sign in</a>      
+  <% } %>
+</nav>
 
 <form class="auth" action="/auth/sign-in" method="POST">
   <h1>Sign in</h1>
