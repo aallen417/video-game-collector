@@ -1,0 +1,94 @@
+h1 {
+  font-size: 42px;
+}
+
+.details {
+  font-size: 36px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.add-game-btn {
+  font-size: 20px;
+  border-radius: 17px;
+  width: 175px;
+  height: 40px;
+  margin-top: 30px;
+  margin-bottom: 110px;
+}
+
+.leave-review {
+  font-size: 32px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+textarea {
+  font-size: 18px;
+  text-align: center;
+  height: 150px;
+  width: 350px;
+  border-radius: 18px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+label {
+  font-size: 22px;
+}
+
+select {
+  font-size: 20px;
+  text-align: center;
+  border-radius: 8px;
+  width: 70px;
+  height: 35px;
+  margin-left: 10px;
+  margin-bottom: 25px;
+}
+
+.add-review-btn {
+  font-size: 20px;
+  height: 40px;
+  width: 150px;
+  border-radius: 17px;
+  margin-bottom: 180px;
+}
+
+.review-header {
+  font-size: 38px;
+  margin-bottom: 80px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.reviews {
+  font-size: 22px;
+  text-align: left;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.review-btn-cont {
+  display: flex;
+}
+
+.edit-btn {
+  margin-right: 20px;
+}
+
+button {
+  width: 110px;
+  height: 28px;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+
+button:hover {
+  color: white;
+  background-color: black;
+}
