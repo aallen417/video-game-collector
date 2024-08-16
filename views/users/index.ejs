@@ -5,7 +5,7 @@
   <h1>Users Collections</h1>
   <section>
     <% users.forEach(u => { %>
-     <div class="user">
+     <div>
       <a href="/users/<%= u._id %>"><%= u.username %></a>
     </div>
     <% }) %>
