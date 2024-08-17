@@ -4,10 +4,10 @@
 <main>
   <h1>Users Collections</h1>
   <section>
-    <% users.forEach(u => { %>
-     <div>
-      <a href="/users/<%= u._id %>"><%= u.username %></a>
-    </div>
+    <% users.forEach(u => { %>     
+      <a href="/users/<%= u._id %>">
+        <div><%= u.username %></div>
+      </a>    
     <% }) %>
   </section>
 </main>
