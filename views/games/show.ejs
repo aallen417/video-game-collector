@@ -31,10 +31,12 @@
      <div class="reviews">
       <%= review.author.username %> - <%= review.content %> - <%= review.rating %><br>
       <div class="review-btn-cont"><% if (review.author._id.equals(user?._id)) { %>     
-        <a href="/games/<%= game._id %>/<%= review._id %>/edit">
-          <button class="edit-btn">Edit Review</button>
-        </a>
-        <form method="POST" action="/games/<%= game._id %>/<%= review._id %>?_method=DELETE">
+        <button class="edit-btn">
+          <a href="/games/<%= game._id %>/<%= review._id %>/edit">
+          Edit Review
+          </a>
+        </button>
+      <form method="POST" action="/games/<%= game._id %>/<%= review._id %>?_method=DELETE">
           <button class="review-btn" type="submit">Delete Review</button>
         </form>
         </div>

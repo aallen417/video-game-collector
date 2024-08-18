@@ -5,7 +5,7 @@
   <h1>Edit Your Review</h1>
   <section>
     <form action="/games/<%= game._id %>/<%= review._id %>?_method=PUT" method="POST">
-      <input type="text" name="content" value="<%= review.content %>" autocomplete="off"><br>
+      <textarea type="text" name="content" value="<%= review.content %>" autocomplete="off"><%= review.content %></textarea><br>
       <label for="rating">Rating:</label>
       <select id="rating" name="rating">
         <option value="<%= review.rating %>"><%= review.rating %></option>

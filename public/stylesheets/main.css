@@ -1,7 +1,5 @@
 body {
-  /* background-color: #070707; */
   margin: 0;
-  /* color: #ebebd3; */
   min-height: 100vh;
   display: grid;
   grid-template-rows: 50px 1fr;
@@ -22,11 +20,28 @@ body > main {
 
 body > nav {
   grid-area: nav;
-  background-color: #b8c0c2;
+  background-color: #9d79cc;
   display: flex;
-  justify-content: flex-end;
+  /* justify-content: space-between; */
   align-items: center;
   padding: 0 20px 0 30px;
+}
+
+nav > div {
+  display: flex;
+  justify-content: space-around;
+  width: 33%;
+}
+
+nav > .sign-out {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+nav > .sign-out > h3 {
+  font-size: 16px;
+  font-weight: 300;
 }
 
 nav > a {
@@ -39,11 +54,6 @@ nav > a {
 
 nav > a:visited {
   color: #424748;
-}
-
-nav > a:hover {
-  color: white;
-  background-color: #424748;
 }
 
 nav > a.active {

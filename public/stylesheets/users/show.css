@@ -29,7 +29,16 @@ div {
 }
 
 button {
+  height: 26px;
+  background-color: #9d79cc;
+  border-radius: 10px;
+  margin-top: 15px;
   margin-bottom: 60px;
+}
+
+button:hover {
+  color: black;
+  background-color: #f5d547;
 }
 
 a {
@@ -39,6 +48,6 @@ a {
 
 a:hover {
   color: white;
-  background-color: black;
+  background-color: #9d79cc;
   border-radius: 6px;
 }

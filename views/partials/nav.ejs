@@ -2,15 +2,28 @@
 <body>
 <nav>
   <% if (user) { %>
-    <a href="/auth/sign-out">Sign out</a>
-    <a href="/users">Users Collections</a>
-    <a href="/users/<%= user._id %>">My Collection</a>
-    <a href="/games/new">Add Games</a>
-    <a href="/games">Games</a>
+      <div class="sign-out">
+        <h3>Logged in as <%= user.username %>!</h3>
+        <a href="/auth/sign-out">Sign out</a>
+      </div>
+      <div>
+        <a href="/users/<%= user._id %>">My Collection</a>
+      </div>
+      <div>
+        <a href="/users">Users Collections</a>
+        <a href="/games/new">Add Games</a>
+        <a href="/games">Games</a>
+      </div>
     <% } else { %>
-      <h1>Please sign in!</h1>
-      <a href="/auth/sign-up">Sign up</a>
-      <a href="/auth/sign-in">Sign in</a>      
-      <a href="/games">Games</a>
+      <div>
+        <a href="/auth/sign-up">Sign up</a>
+        <a href="/auth/sign-in">Sign in</a>
+      </div>
+      <div>
+        <h2>Please sign in!</h2>
+      </div>
+      <div>
+        <a href="/games">Games</a>
+      </div>
   <% } %>
 </nav>
