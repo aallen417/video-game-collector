@@ -23,7 +23,7 @@ const gameSchema = new Schema({
   },
   console: {
     type: String,
-    enum: ["Xbox", "PS3", "Switch", "PC"]
+    enum: ["PC", "PS5", "Xbox Series X/S", "Switch", "Xbox One", "PS4", "Wii U", "Wii", "PS3", "Xbox 360", "Xbox", "GameCube", "PS2", "Dreamcast", "N64", "PSOne", "SNES", "Genesis", "NES"]
   },
   reviews: [reviewSchema]  
 })
