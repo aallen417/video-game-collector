@@ -12,7 +12,7 @@
       <div class="details"><%= game.console %></div>
       <% if (selectedUser._id.equals(user?._id)) { %>     
         <form method="POST" action="/users/<%= user._id %>/<%= game._id %>?_method=DELETE">
-        <button type="submit">Remove</button>
+          <button type="submit">Remove</button>
         </form>
       <% } %>
     <% }) %>
